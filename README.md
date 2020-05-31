@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Do you wish to convert your music to a form in which others cannot listen it? 
 Do you wish to convert your movies to a form in which others cannot watch them? 
 Do you wish to convert your documents to a form in which others cannot read them? 
@@ -14,3 +15,6 @@ Don't worry. It is also other way around. With the password you had used for enc
 Moreover, the application does NOT store your passwords.  Instead it uses SHA-512 hashing algorithm to verify the password.
 
 Demonstration of the application available at: https://youtu.be/rt5jLN4jJ_U
+=======
+# encryptor
+>>>>>>> 4b3e20adca0e22a026261d3de3647c8421f2b3a6
