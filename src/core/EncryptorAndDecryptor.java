@@ -81,17 +81,22 @@ public class EncryptorAndDecryptor extends SwingWorker <Boolean,Boolean>
     
     private void encrypt()
     {
+        long percent = 100/listFile.length;
+        int totalPercent = progressBar.getValue();
         for(File file:listFile)
         {
             encrypt(file);
+            totalPercent += percent;
+            progressBar.setValue((int)totalPercent);
+            progressLabel.setText(String.valueOf(totalPercent)+"%");
+            
         }
         progressBar.setValue(progressBar.getMaximum());
         progressLabel.setText("100%");
     }
     private void encrypt(File file)
     {
-        long percent = 100/file.length();
-        int totalPercent = progressBar.getValue();
+
         if(!file.isDirectory() && file.exists())
         {
             progressTextField.append("Encrypting "+file.getAbsolutePath()+"\n");
@@ -103,31 +108,34 @@ public class EncryptorAndDecryptor extends SwingWorker <Boolean,Boolean>
             for(File f:file.listFiles())
             {
                 encrypt(f);
-                totalPercent += percent;
-                progressBar.setValue((int)totalPercent);
-                progressLabel.setText(String.valueOf(totalPercent)+"%");
+
             }
         }
     }
     
     private void decrypt()
     {
+        long percent = 100/listFile.length;
+        int totalPercent = progressBar.getValue();
         for(File file:listFile)
         {
                 decrypt(file);
+                totalPercent += percent;
+                progressBar.setValue((int)totalPercent);
+                progressLabel.setText(String.valueOf(totalPercent)+"%");
         }
         progressBar.setValue(progressBar.getMaximum());
         progressLabel.setText("100%");
     }
     private void decrypt(File file)
     {
-        long percent = 100/file.length();
-        int totalPercent = progressBar.getValue();
+        
         if(!file.isDirectory() && file.exists() && file.getName().substring(file.getName().length()-4, file.getName().length()).equalsIgnoreCase(".enc"))
         {
             progressTextField.append("Decrypting "+file.getAbsolutePath()+"\n");
             fileEncryptorAndDecryptor.decrypt(file, key, progressTextField);
             progressTextField.append("Done!\n\n");
+            
         }
         else if(file.isDirectory() && file.exists())
         {
@@ -135,9 +143,7 @@ public class EncryptorAndDecryptor extends SwingWorker <Boolean,Boolean>
             {
                 
                 decrypt(f);
-                totalPercent += percent;
-                progressBar.setValue((int)totalPercent);
-                progressLabel.setText(String.valueOf(totalPercent)+"%");
+                
             }
         }
     }

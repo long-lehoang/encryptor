@@ -187,7 +187,17 @@ public class FileChooser extends javax.swing.JFrame
             }
         });
     }
-    
+    private boolean fileExist(File[] listFile)
+    {
+        for(File file:listFile){
+            if (!file.exists())
+            {
+                JOptionPane.showMessageDialog(null, "File "+file.getName()+" not found");
+                return false;
+            }
+        }
+        return true;
+    }
     
     private boolean anyEncFileExists(File[] listFile)
     {
@@ -310,14 +320,14 @@ public class FileChooser extends javax.swing.JFrame
             
             
             
-           if(encryptOrDecrypt.equalsIgnoreCase("encrypt") && !anyEncFileExists(listFile))
+           if(encryptOrDecrypt.equalsIgnoreCase("encrypt") && fileExist(listFile) && !anyEncFileExists(listFile))
            {
                new TodoEncryptOrDecrypt(this.listFile,encryptOrDecrypt).setVisible(true);
                setVisible(false);
                dispose();
            }
            
-           else if(encryptOrDecrypt.equalsIgnoreCase("decrypt") && allAreEncFiles(listFile))
+           else if(encryptOrDecrypt.equalsIgnoreCase("decrypt")&& fileExist(listFile) && allAreEncFiles(listFile) )
            {
                    new TodoEncryptOrDecrypt(this.listFile,encryptOrDecrypt).setVisible(true);
                    setVisible(false);

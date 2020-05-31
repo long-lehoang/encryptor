@@ -18,8 +18,6 @@ import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JLabel;
-import javax.swing.JProgressBar;
 import javax.swing.JTextArea;
 
 
