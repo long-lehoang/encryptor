@@ -152,7 +152,7 @@ public class PasswordDecryption extends javax.swing.JFrame
     private void passwordFieldKeyReleased(java.awt.event.KeyEvent evt)//GEN-FIRST:event_passwordFieldKeyReleased
     {//GEN-HEADEREND:event_passwordFieldKeyReleased
         int length_pass = passwordField.getPassword().length;
-        if(length_pass == 16 || length_pass == 32 || length_pass ==64 )
+        if(length_pass == 16 || length_pass == 32 || length_pass ==24 )
         {
             proceedButton.setEnabled(true);
         }

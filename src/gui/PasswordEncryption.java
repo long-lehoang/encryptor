@@ -75,7 +75,7 @@ public class PasswordEncryption extends javax.swing.JFrame
     {
         char password1[]=passwordField1.getPassword();
         char password2[]=passwordField2.getPassword();
-        if(password1.length!=16 && password1.length != 32 && password1.length != 64)
+        if(password1.length!=16 && password1.length != 32 && password1.length != 24)
         {
             eightCharInstructionLabel.setText("Key must have 16,32,64 characters");
             eightCharInstructionLabel.setVisible(true);
@@ -154,40 +154,37 @@ public class PasswordEncryption extends javax.swing.JFrame
         suggestionLabel.setText("Input Key String To Encrypt Files");
 
         eightCharInstructionLabel.setForeground(new java.awt.Color(255, 0, 0));
-        eightCharInstructionLabel.setText("Key must have 16 characters");
+        eightCharInstructionLabel.setText("Key must have 16,24,32 characters");
         eightCharInstructionLabel.setFocusable(false);
 
-        jLabel3.setText("Key must have 16,32,64 characters");
+        jLabel3.setText("Key must have 16,24,32 characters");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addComponent(passwordField2)
+            .addComponent(passwordField1)
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jLabel1)
-                            .addGap(21, 21, 21))
-                        .addComponent(passwordField2, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
-                        .addComponent(passwordField1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(81, 81, 81)
-                        .addComponent(proceedButton))
+                        .addContainerGap()
+                        .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(eightCharInstructionLabel))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel2)))
-                .addGap(30, 30, 30))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(suggestionLabel))
-                .addContainerGap())
+                        .addComponent(jLabel2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(suggestionLabel)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(99, 99, 99)
+                        .addComponent(proceedButton)))
+                .addGap(0, 18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
