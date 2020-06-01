@@ -56,6 +56,7 @@ public class Main extends javax.swing.JFrame
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Encrypt App");
+        setBackground(new java.awt.Color(138, 211, 23));
 
         heading.setFont(new java.awt.Font("Vrinda", 1, 18)); // NOI18N
         heading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
