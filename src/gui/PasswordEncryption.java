@@ -77,7 +77,7 @@ public class PasswordEncryption extends javax.swing.JFrame
         char password2[]=passwordField2.getPassword();
         if(password1.length!=16 && password1.length != 32 && password1.length != 24)
         {
-            eightCharInstructionLabel.setText("Key must have 16,32,64 characters");
+            eightCharInstructionLabel.setText("Key must have 16,24,32 characters");
             eightCharInstructionLabel.setVisible(true);
             return false;
         }
